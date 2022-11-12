@@ -166,6 +166,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                     WrongAns=btnA.getText().toString();
                     WrongCount++;
                 }
+                selectedValue=btnA.getText().toString();
                 left--;
                 ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
                 break;
@@ -176,6 +177,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                     WrongAns=btnB.getText().toString();
                     WrongCount++;
                 }
+                selectedValue=btnB.getText().toString();
                 left--;
                 ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
                 break;
@@ -186,6 +188,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                     WrongAns=btnC.getText().toString();
                     WrongCount++;
                 }
+                selectedValue=btnC.getText().toString();
                 left--;
                 ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
                 break;
@@ -196,19 +199,17 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                     WrongAns=btnD.getText().toString();
                     WrongCount++;
                 }
+                selectedValue=btnD.getText().toString();
                 left--;
                 ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
                 break;
         }
-        selectedValue=WrongAns;
         setStatusRightWrong();
         if (left == 0) {
             String temp=String.valueOf(ColorBox);
             SelectedOption.add((temp+","+selectedValue+","+Correct+","+Status));
             Intent intents2=new Intent(getApplicationContext(),showresult.class);
             intents2.putStringArrayListExtra("Selected Ans", SelectedOption);
-            intents2.putExtra("Wrong",String.valueOf(WrongCount));
-            intents2.putExtra("Right",String.valueOf(CorrectCount));
             startActivity(intents2);
         }
         else {
