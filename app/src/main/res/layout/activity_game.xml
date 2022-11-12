@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Detail"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/PlayerNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\nRight: 0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: 0\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: 10"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ColorBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.413"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/ColorBox"
+        android:layout_width="148dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/black"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <TextView
+        android:id="@+id/PlayerNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="24dp"
+        android:text="Player Name: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/A"
+        android:layout_width="116dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="244dp"
+        android:text="A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/B"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ColorBox" />
+
+    <Button
+        android:id="@+id/D"
+        android:layout_width="114dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="91dp"
+        android:text="D"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/C"
+        app:layout_constraintTop_toTopOf="@+id/B"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/C"
+        android:layout_width="111dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="93dp"
+        android:text="C"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPrevious"
+        app:layout_constraintEnd_toStartOf="@+id/D"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/A"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <Button
+        android:id="@+id/B"
+        android:layout_width="116dp"
+        android:layout_height="51dp"
+        android:text="B"
+        app:layout_constraintBaseline_toBaselineOf="@+id/A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/A" />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="Close"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonPrevious"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:text="Previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonClose" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
