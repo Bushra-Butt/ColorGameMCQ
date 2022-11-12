@@ -19,8 +19,8 @@ public class game extends AppCompatActivity implements View.OnClickListener{
 
     int[] colors = {Color.rgb(255,0,0), Color.rgb(0,242,0),Color.rgb(0,0,255)
             ,Color.rgb(255,255,0),Color.rgb(228, 51, 255),Color.rgb(143, 97, 37),
-            Color.rgb(250, 163, 50), Color.rgb(0,0,0),Color.rgb(255, 105, 180),Color.rgb(255,255,255)};
-    String [] colorName = {"Red","Green","Blue","Yellow","Purple","Brown","Orange","Black","Pink","White"};
+            Color.rgb(250, 163, 50), Color.rgb(0,0,0),Color.rgb(255, 105, 180),Color.rgb(128,0,0)};
+    String [] colorName = {"Red","Green","Blue","Yellow","Purple","Brown","Orange","Black","Pink","Maroon"};
     Button btnA, btnB, btnC,btnD;
     TextView Colors,ResultText,NameText;
     int selectedColor = 0, left=10,CorrectCount, WrongCount,tempAns;
