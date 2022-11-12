@@ -17,7 +17,7 @@ public class showresult extends AppCompatActivity {
 
     TableRow tableRow1;
     TextView textView,testing;TableLayout tableLayout;
-    int RightCount,WrongCount;
+    int RightCount=0,WrongCount=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +54,10 @@ public class showresult extends AppCompatActivity {
     }
     private void CountWrongAndRight(String[] Res)
     {
-        for(int j=0;j<4;j++) {
+        for(int j=0;j<4;j++)
+        {
             if(j==3) {
-                if (Res[3].toString()=="Right")
+                if (Res[3].toString().equals("Right"))
                 {
                     RightCount++;
                 }
