@@ -21,14 +21,10 @@ public class game extends AppCompatActivity implements View.OnClickListener{
             ,Color.rgb(255,255,0),Color.rgb(228, 51, 255),Color.rgb(143, 97, 37),
             Color.rgb(250, 163, 50), Color.rgb(0,0,0),Color.rgb(255, 105, 180),Color.rgb(128,0,0)};
     String [] colorName = {"Red","Green","Blue","Yellow","Purple","Brown","Orange","Black","Pink","Maroon"};
-    Button btnA, btnB, btnC,btnD;
-    TextView Colors,ResultText,NameText;
+    Button btnA, btnB, btnC,btnD,prev,close; TextView Colors,ResultText,NameText;
     int selectedColor = 0, left=10,CorrectCount, WrongCount,tempAns;
-    String answer = "",WrongAns= "";
-    int rendomNo1 =0, rendomNo2 =0,rendomNo3 =0;
-    int counter =0;
-    String name;
-    int ColorBox;String selectedValue="";String Status="";String Correct= "";
+    String answer = "",WrongAns= "";int rendomNo1 =0, rendomNo2 =0,rendomNo3 =0;
+    int counter =0;String name;int ColorBox;String selectedValue="";String Status="";String Correct= "";
     ArrayList<String> SelectedOption = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +35,22 @@ public class game extends AppCompatActivity implements View.OnClickListener{
         btnB=findViewById(R.id.B);
         btnC=findViewById(R.id.C);
         btnD=findViewById(R.id.D);
+        prev=findViewById(R.id.buttonPrevious);
+        close=findViewById(R.id.buttonClose);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(inte);
+            }
+        });
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
         NameText=findViewById(R.id.editTextTextEmailAddress);
         Intent intent = getIntent();
         name=intent.getStringExtra("Name");
