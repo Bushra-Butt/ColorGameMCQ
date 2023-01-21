@@ -185,7 +185,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnA.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
+                ResultText.setText("\nRight:" +CorrectCount+ "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong:"+ WrongCount + " \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft:" + left);
                 break;
             case R.id.B:
                 if (answer == btnB.getText()) {
@@ -196,7 +196,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnB.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
+                ResultText.setText("\nRight:" +CorrectCount+ "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong:"+ WrongCount + " \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft:" + left);ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
             case R.id.C:
                 if (answer == btnC.getText()) {
@@ -207,7 +207,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnC.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
+                ResultText.setText("\nRight:" +CorrectCount+ "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong:"+ WrongCount + " \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft:" + left);
                 break;
             case R.id.D:
                 if (answer == btnD.getText()) {
@@ -218,7 +218,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnD.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
+                ResultText.setText("\nRight:" +CorrectCount+ "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong:"+ WrongCount + " \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft:" + left);ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
         }
         setStatusRightWrong();
