@@ -25,7 +25,10 @@ public class game extends AppCompatActivity implements View.OnClickListener{
     int selectedColor = 0, left=10,CorrectCount, WrongCount,tempAns;
     String answer = "",WrongAns= "";int rendomNo1 =0, rendomNo2 =0,rendomNo3 =0;
     int counter =0;String name;int ColorBox;String selectedValue="";String Status="";String Correct= "";
+    int IDPlayer;
     ArrayList<String> SelectedOption = new ArrayList<>();
+    DbHelper db=new DbHelper(game.this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
         NameText=findViewById(R.id.editTextTextEmailAddress);
         Intent intent = getIntent();
         name=intent.getStringExtra("Name");
+        IDPlayer=db.GetPlayerId(name).getID();
         NameText.setText(name);
         ResultText=findViewById(R.id.textViewResult);
         btnA.setOnClickListener(this);
@@ -170,6 +174,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
     }
     @Override
     public void onClick(View view) {
+
         switch (view.getId()) {
             case R.id.A:
                 if (answer == btnA.getText()) {
@@ -180,7 +185,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnA.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
+                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
             case R.id.B:
                 if (answer == btnB.getText()) {
@@ -191,7 +196,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnB.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
+                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
             case R.id.C:
                 if (answer == btnC.getText()) {
@@ -202,7 +207,7 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnC.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
+                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
             case R.id.D:
                 if (answer == btnD.getText()) {
@@ -213,20 +218,33 @@ public class game extends AppCompatActivity implements View.OnClickListener{
                 }
                 selectedValue=btnD.getText().toString();
                 left--;
-                ResultText.setText("\nRight:" + CorrectCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tTotal: 10\nWrong: " + WrongCount + "\t\t\t\t\t\t\t\t\t\t\t\t\t\tLeft: " + left + "");
+                ResultText.setText("\nRight:" + CorrectCount + "\nTotal: 10\nWrong: " + WrongCount + "\nLeft: " + left + "");
                 break;
         }
         setStatusRightWrong();
         if (left == 0) {
             String temp=String.valueOf(ColorBox);
             SelectedOption.add((temp+","+selectedValue+","+Correct+","+Status));
+            Result result=new Result();
+            result.setCorrectAns(Correct);
+            result.setSelectedAns(selectedValue);
+            result.setColor(ColorBox);
+            result.setUserId(IDPlayer);
+            db.AddResult(result);
             Intent intents2=new Intent(getApplicationContext(),showresult.class);
             intents2.putStringArrayListExtra("Selected Ans", SelectedOption);
+            intents2.putExtra("IDPLAYER",IDPlayer);
             startActivity(intents2);
         }
         else {
             String temp=String.valueOf(ColorBox);
             SelectedOption.add((temp+","+selectedValue+","+Correct+","+Status));
+            Result result=new Result();
+            result.setCorrectAns(Correct);
+            result.setSelectedAns(selectedValue);
+            result.setColor(ColorBox);
+            db.AddResult(result);
+            result.setUserId(IDPlayer);
             GenerateColorOfRectangle();
             GetTextOnButton();
         }

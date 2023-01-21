@@ -11,6 +11,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     EditText nameField; Button cancelbutton; Button PlayButton;
+    DbHelper db=new DbHelper(MainActivity.this);
+    Player player=new Player();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.Play:
                 if(nameField.getText().length()!=0) {
                     intents.putExtra("Name", nameField.getText().toString());
+                    player.setName(nameField.getText().toString());
+                    db.AddPlayer(player);
                     startActivity(intents);
                 }
                 else

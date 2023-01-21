@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".game">
+
+    <TextView
+        android:id="@+id/ColorBox"
+        android:layout_width="118dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/boxborder"
+        app:layout_constraintBottom_toTopOf="@+id/C"
+        app:layout_constraintEnd_toStartOf="@+id/C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/C"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <Button
+        android:id="@+id/D"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="6dp"
+        android:text="D"
+        app:layout_constraintBottom_toBottomOf="@+id/C"
+        app:layout_constraintEnd_toStartOf="@+id/textViewResult"
+        app:layout_constraintStart_toEndOf="@+id/C"
+        app:layout_constraintTop_toBottomOf="@+id/A"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/C"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="28dp"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPrevious"
+        app:layout_constraintEnd_toStartOf="@+id/D"
+        app:layout_constraintStart_toEndOf="@+id/ColorBox" />
+
+    <Button
+        android:id="@+id/A"
+        android:layout_width="111dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="65dp"
+        android:text="A"
+        app:layout_constraintBottom_toBottomOf="@+id/ColorBox"
+        app:layout_constraintEnd_toStartOf="@+id/textViewResult"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/B"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="19dp"
+        android:text="B"
+        app:layout_constraintBottom_toTopOf="@+id/D"
+        app:layout_constraintEnd_toStartOf="@+id/buttonClose"
+        app:layout_constraintStart_toEndOf="@+id/A"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+    <Button
+        android:id="@+id/buttonPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:text="Previous"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonClose"
+        app:layout_constraintStart_toStartOf="@+id/D" />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="Close"
+        app:layout_constraintStart_toEndOf="@+id/buttonPrevious"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="0dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="40dp"
+        android:text="\nRight: 0\nTotal: 10\nWrong: 0\nLeft: 10"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/D"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="307dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/textViewResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
