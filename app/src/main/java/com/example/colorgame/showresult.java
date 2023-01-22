@@ -102,20 +102,17 @@ public class showresult extends AppCompatActivity {
                     textView.setText(arrayList.get(i).getCorrectAns().toString());
                     list+="Correct: "+arrayList.get(i).getCorrectAns().toString()+"\n";
                 }
-                    else if (j == 3)
-                    if(arrayList.get(i).getCorrectAns().toString().equals(arrayList.get(i).getSelectedAns().toString()))
-                    {
+                    else if (j == 3) {
+                    if (arrayList.get(i).getCorrectAns().toString().equals(arrayList.get(i).getSelectedAns().toString())) {
                         textView.setText("Right");
                         RightCount++;
-                        list+="Status: Right \n -----------------------\n";
-                    }
-                    else {
+                        list += "Status: Right \n -----------------------\n";
+                    } else {
                         textView.setText("Wrong");
                         WrongCount++;
-                        list+="Status: Wrong \n -----------------------\n";
+                        list += "Status: Wrong \n -----------------------\n";
                     }
-
-                    textView.setTextColor( Color.rgb(0,0,0));
+                } textView.setTextColor( Color.rgb(0,0,0));
                 tableRow1.addView(textView);
             }
 //            CountWrongAndRight(tempDta);
