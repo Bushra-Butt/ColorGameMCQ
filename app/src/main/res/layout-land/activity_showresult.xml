@@ -9,91 +9,124 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
         tools:context=".showresult">
-
 
         <TextView
             android:id="@+id/WrongAndRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginBottom="14dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginEnd="183dp"
             android:text="Wrong: 0\nRight: "
-            app:layout_constraintBottom_toTopOf="@+id/textViewF"
-            app:layout_constraintStart_toStartOf="@+id/textViewF"
+            app:layout_constraintBottom_toTopOf="@+id/Whatsappbutton"
+            app:layout_constraintEnd_toStartOf="@+id/Whatsappbutton"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
             android:text="Result"
             android:textSize="23dp"
             app:layout_constraintBottom_toTopOf="@+id/WrongAndRight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Whatsappbutton"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewF"
-            android:layout_width="663dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/black"
             android:padding="7sp"
             android:text="Finish"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.071"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/WrongAndRight" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="606dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginEnd="7dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewF" />
+            app:layout_constraintTop_toBottomOf="@+id/Whatsappbutton" />
 
         <TableLayout
             android:id="@+id/tableLayout2"
-            android:layout_width="644dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="123dp"
             android:stretchColumns="*"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.534"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintTop_toBottomOf="@+id/textViewF">
 
-            <!--            <TableRow>-->
+            <TableRow>
 
+                <TextView
+                    android:id="@+id/h1"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Box"
+                    android:textColor="@color/black" />
 
-            <!--            </TableRow>-->
+                <TextView
+                    android:id="@+id/h2"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Selected"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="81dp" />
+
+                <TextView
+                    android:id="@+id/h3"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Correct"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="194dp" />
+
+                <TextView
+                    android:id="@+id/h4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Status"
+                    android:textColor="@color/black"
+                    tools:layout_editor_absoluteX="298dp" />
+            </TableRow>
         </TableLayout>
 
         <Button
-            android:id="@+id/commit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginBottom="43dp"
-            android:text="Commit"
+            android:id="@+id/Whatsappbutton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="7dp"
+            android:text="WhatsAp"
             app:layout_constraintBottom_toTopOf="@+id/textViewF"
-            app:layout_constraintStart_toEndOf="@+id/textView3" />
+            app:layout_constraintEnd_toStartOf="@+id/commit"
+            app:layout_constraintStart_toEndOf="@+id/WrongAndRight"
+            app:layout_constraintTop_toBottomOf="@+id/WrongAndRight" />
+
+        <Button
+            android:id="@+id/commit"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="46dp"
+            android:text="Commit"
+            app:layout_constraintBottom_toBottomOf="@+id/Whatsappbutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Whatsappbutton"
+            app:layout_constraintTop_toTopOf="@+id/Whatsappbutton"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
